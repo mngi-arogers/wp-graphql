@@ -15,6 +15,7 @@ services:
     volumes:
       - "test-suite:/tmp"
       - "./:/project"
+
   wpgraphql_test:
     image: "wordpress:${WP_VERSION:-4.9.4}-php${PHP_VERSION:-7.2}-apache"
     depends_on:
@@ -30,6 +31,7 @@ services:
           - "wpgraphql.test"
     volumes:
       - "./:/var/www/html/wp-content/plugins/wp-graphql"
+
   mysql_test:
     image: "mariadb:10.2"
     environment:
